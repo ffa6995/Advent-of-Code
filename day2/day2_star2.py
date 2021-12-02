@@ -41,7 +41,7 @@ def processCommands(sub, commands):
             sub.changeDepth(-value)
 
 if __name__ == '__main__':
-    ## Star 1
+    ## Star 2
     submarine = Submarine(0, 0, 0)
     commands = readFile('input2')
     processCommands(submarine, commands)
