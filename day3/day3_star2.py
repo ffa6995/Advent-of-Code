@@ -47,9 +47,6 @@ class DiagnosticReport:
             mostCommonBit = self.getMostCommonBit(oxygen_bits[i])
             oxygen_bytes = self.filterOnBit(oxygen_bytes, i, mostCommonBit)
             oxygen_bits = self.getNewBits(oxygen_bytes)
-            print(oxygen_bytes)
-            print(oxygen_bits[1])
-        print(oxygen_bytes)
 
         for i in range(0, 12):
             mostCommonBit = self.getMostCommonBit(co2_bits[i])
@@ -62,14 +59,10 @@ class DiagnosticReport:
             co2_bits = self.getNewBits(co2_bytes)
             if len(co2_bytes) == 1:
                 break
-        print(co2_bytes)
-        print(int(co2_bytes[0][0], 2))
-        print(int(oxygen_bytes[0][0], 2))
         self.life_support_rtg = int(co2_bytes[0][0], 2) * int(oxygen_bytes[0][0], 2)
         print(self.life_support_rtg)
 
-
-        return bytes
+        return self.life_support_rtg
 
     def filterOnBit(self, bytes, index, bit):
         new_bytes = [byte for byte in bytes if byte[0][index] == bit]
